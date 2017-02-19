@@ -97,7 +97,7 @@
 作为一个Android开发者，肯定会遇到这样的一种情况，用户在玩着你开发的app时，突然有微信来消息了，切换到了微信，然后还在微信逗留看视频啊，聊天啊，刷朋友圈啊等等的，你所开发的app就出于后台了，这个时候就很容易出现手机内存不足，app被内存回收干掉的情况了，等用户终于聊完天，刷完朋友圈，回来app的时候，就会进行app的自我恢复了，如果开发者处理不好，就会出现崩溃的情况了，而且肯">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1316299-ee3834aeb9885324.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1316299-ee0d1ba7db3abe98.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-19T13:21:25.000Z">
+<meta property="og:updated_time" content="2017-02-19T13:29:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何让你的app在后台被干掉后优雅的重新启动">
 <meta name="twitter:description" content="背景介绍
@@ -374,6 +374,7 @@
 <h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><blockquote>
 <p>作为一个Android开发者，肯定会遇到这样的一种情况，用户在玩着你开发的app时，突然有微信来消息了，切换到了微信，然后还在微信逗留看视频啊，聊天啊，刷朋友圈啊等等的，你所开发的app就出于后台了，这个时候就很容易出现手机内存不足，app被内存回收干掉的情况了，等用户终于聊完天，刷完朋友圈，回来app的时候，就会进行app的自我恢复了，如果开发者处理不好，就会出现崩溃的情况了，而且肯定会出现返回的时候一瞬间白屏，然后再显示出来，这样的用户体验非常的不好。那我们应该怎样去解决这样的状况呢？扯了那么多，我们的文章就正式开始啦！</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>首先要介绍下Android中activity的四种启动模式（就当作复习一下旧知识吧，资料来源于网络总结）：</p>
 <blockquote>
 <p>Standard：是默认的也是标准的Task模式，在没有其他因素的影响下，使用此模式的Activity，会构造一个Activity的实例，加入到调用者的Task栈中去，对于使用频度一般开销一般什么都一般的Activity而言，standard模式无疑是最合适的，因为它逻辑简单条理清晰，所以是默认的选择。</p>
@@ -466,6 +467,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/02/19/WebView想说爱你不容易啊/" rel="prev" title="WebView想说爱你不容易啊">
+                WebView想说爱你不容易啊 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -538,7 +543,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -1,0 +1,724 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="为什么要使用WebView
+随着app业务的不断深入发展，只靠着原生代码来堆砌功能是不现实，毕竟开发的时长会增加，而且同时需要开发iOS和Android两套，并且，如果在UI上改变了一丁点，都需要提包（虽然Android现在可以进行热更新，但是热更新不是100%能生效的，其中的原理只要了解过的人都会知道的），最终我们会选择使用原生嵌套H5的方式进行开发，这样，既可以随时更改UI，也可以无限制的进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebView想说爱你不容易啊">
+<meta property="og:url" content="http://yoursite.com/2017/02/19/WebView想说爱你不容易啊/index.html">
+<meta property="og:site_name" content="mehao">
+<meta property="og:description" content="为什么要使用WebView
+随着app业务的不断深入发展，只靠着原生代码来堆砌功能是不现实，毕竟开发的时长会增加，而且同时需要开发iOS和Android两套，并且，如果在UI上改变了一丁点，都需要提包（虽然Android现在可以进行热更新，但是热更新不是100%能生效的，其中的原理只要了解过的人都会知道的），最终我们会选择使用原生嵌套H5的方式进行开发，这样，既可以随时更改UI，也可以无限制的进行">
+<meta property="og:updated_time" content="2017-02-19T13:33:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebView想说爱你不容易啊">
+<meta name="twitter:description" content="为什么要使用WebView
+随着app业务的不断深入发展，只靠着原生代码来堆砌功能是不现实，毕竟开发的时长会增加，而且同时需要开发iOS和Android两套，并且，如果在UI上改变了一丁点，都需要提包（虽然Android现在可以进行热更新，但是热更新不是100%能生效的，其中的原理只要了解过的人都会知道的），最终我们会选择使用原生嵌套H5的方式进行开发，这样，既可以随时更改UI，也可以无限制的进行">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6388098513770644000',
+      author: 'mehao'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/19/WebView想说爱你不容易啊/"/>
+
+
+
+
+
+  <title> WebView想说爱你不容易啊 | mehao </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?34ab8a00cc2402ea4ac04226c2ea733e"";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">mehao</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/19/WebView想说爱你不容易啊/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="mehao">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="mehao">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="mehao" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                WebView想说爱你不容易啊
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T21:30:13+08:00">
+                2017-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/19/WebView想说爱你不容易啊/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/WebView想说爱你不容易啊/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="为什么要使用WebView"><a href="#为什么要使用WebView" class="headerlink" title="为什么要使用WebView"></a>为什么要使用WebView</h3><blockquote>
+<p>随着app业务的不断深入发展，只靠着原生代码来堆砌功能是不现实，毕竟开发的时长会增加，而且同时需要开发iOS和Android两套，并且，如果在UI上改变了一丁点，都需要提包（虽然Android现在可以进行热更新，但是热更新不是100%能生效的，其中的原理只要了解过的人都会知道的），最终我们会选择使用原生嵌套H5的方式进行开发，这样，既可以随时更改UI，也可以无限制的进行功能扩展，然后，我们就要使用到Android的WebView了，这个让我们痛并快乐着的控件。</p>
+</blockquote>
+<p>现在的手机高度定制，多多少少都会对系统原生的代码进行了修改和添加的，不同的手机的WebView呈现出来的效果也是不同的，可以说是五彩缤纷了，所以我懂Android开发者的痛苦。接下来我就具体去讲解我在项目中使用WebView的经验，不喜勿喷哈。</p>
+<a id="more"></a>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>一开始相信大家都是直接在布局文件中添加WebView控件，当然我一开始也是这样做的，就是为了简单，而且也不知道这样会出现什么问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;WebView    </div><div class="line">    android:id=&quot;@+id/web_view&quot;    </div><div class="line">    android:layout_width=&quot;match_parent&quot;    </div><div class="line">    android:layout_height=&quot;match_parent&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>直接就这样添加了一个WebView，发现也没什么问题啊，一样可以显示，什么都是正常的啊。在重复打开有WebView的页面时，你会发现，应用的内存会不断升高，销毁了之后也不会降下来，点击GC也降不下来，这样就出现了内存泄漏了，这时你就会发现，这样使用WebView是不正确的，那么最好方式是如何使用呢？<br>那就是在代码中动态添加。<br>首先在布局文件中声明一个parent布局</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;LinearLayout    </div><div class="line">    android:id=&quot;@+id/web_view&quot;   </div><div class="line">    android:layout_width=&quot;match_parent&quot;    </div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:orientation=&quot;horizontal&quot;   </div><div class="line">    android:scrollbars=&quot;none&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>然后在代码中，把WebView当做其子View添加进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">WebView webView = new WebView(context);</div><div class="line">webViewLayout.addView(webView);</div></pre></td></tr></table></figure>
+<p>网上很多人说这个context应该用application的，我觉得是不对的，如果你的WebView需要弹出一个dialog呢？还有其他的不可预估的问题的，最好还是用当前的activity的Context是最合适的。<br>上面说的是如何把WebView添加进来进行使用，然后到底它有哪些属性是我们在开发中需要使用到的呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">webView.loadUrl(&quot;www.baidu.com&quot;);//WebView加载的网页使用loadUrl</div><div class="line">WebSettings webSettings = webView.getSettings();//获得WebView的设置</div><div class="line">webSettings.setUseWideViewPort(true);// 设置此属性，可任意比例缩放</div><div class="line">webSettings.setLoadWithOverviewMode(true);//适配</div><div class="line">webSettings.setJavaScriptEnabled(true);  //支持js</div><div class="line">webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);  //设置 缓存模式</div><div class="line">webSettings.setDomStorageEnabled(true);// 开启 DOM storage API 功能</div><div class="line">webSettings.setDatabaseEnabled(true);//开启 database storage API 功能</div><div class="line">webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);//HTTPS，注意这个是在LOLLIPOP以上才调用的</div><div class="line">webSettings.setAppCacheEnabled(true);//开启 Application Caches 功能</div><div class="line">webSettings.setBlockNetworkImage(true);//关闭加载网络图片，在一开始加载的时候可以设置为true，当加载完网页的时候再设置为false</div></pre></td></tr></table></figure>
+<p>上面是使用WebView中最基础的设置，相信在开发过程中都会进行如上的设置的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">webView.setWebChromeClient(new WebChromeClient() &#123;    </div><div class="line">     @Override   </div><div class="line">     public void onProgressChanged(WebView view, int newProgress) &#123;</div><div class="line">         //加载的进度</div><div class="line">     &#125;</div><div class="line">     @Override</div><div class="line">     public void onReceivedTitle(WebView view, String title) &#123;   </div><div class="line">         //获取WebView的标题</div><div class="line">     &#125;</div><div class="line">    @Override</div><div class="line">    public boolean onJsAlert(WebView view, String url, String message, final JsResult result) &#123;    </div><div class="line">        return super.onJsAlert(view, url, message, result);</div><div class="line">        //Js 弹框</div><div class="line">    &#125;</div><div class="line">    @Override</div><div class="line">    public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) &#123;   </div><div class="line">        AlertDialog.Builder b = new AlertDialog.Builder(IllegalQueryActivity.this);    </div><div class="line">        b.setTitle(&quot;删除&quot;);    </div><div class="line">        b.setMessage(message);    </div><div class="line">        b.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() &#123;        </div><div class="line">            @Override        </div><div class="line">            public void onClick(DialogInterface dialog, int which) &#123;            </div><div class="line">                result.confirm();        </div><div class="line">            &#125;    </div><div class="line">        &#125;);    </div><div class="line">        b.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() &#123;        </div><div class="line">            @Override        </div><div class="line">            public void onClick(DialogInterface dialog, int which) &#123;            </div><div class="line">                result.cancel();        </div><div class="line">            &#125;    </div><div class="line">        &#125;);    </div><div class="line">        b.create().show();    </div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">webView.setWebViewClient(new WebViewClient() &#123;    </div><div class="line">    @Override    </div><div class="line">    public boolean shouldOverrideUrlLoading(WebView view, String url) &#123;        </div><div class="line">       //需要设置在当前WebView中显示网页，才不会跳到默认的浏览器进行显示</div><div class="line">       return true;   </div><div class="line">    &#125;    </div><div class="line">    @Override    </div><div class="line">    public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) &#123;</div><div class="line">        super.onReceivedError(view, request, error);</div><div class="line">        //加载出错了</div><div class="line">    &#125;   </div><div class="line">    @Override    </div><div class="line">    public void onPageFinished(WebView view, String url) &#123;        </div><div class="line">        super.onPageFinished(view, url);</div><div class="line">        //加载完成</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">webView.setDownloadListener(new DownLoadListener());//下载监听</div><div class="line">private class DownLoadListener implements DownloadListener &#123;   </div><div class="line">    @Override   </div><div class="line">    public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) &#123;      </div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后就是WebView跟JS的交互了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">webView.addJavascriptInterface(new WebAppInterface(this), &quot;WebJs&quot;);</div><div class="line">public class WebAppInterface &#123; </div><div class="line">    Context mContext;    </div><div class="line">    public WebAppInterface(Context c) &#123;        </div><div class="line">        mContext = c;    </div><div class="line">    &#125;    </div><div class="line">    @JavascriptInterface    </div><div class="line">    public void method() &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">webView.loadUrl(&quot;javascript:jsMethod()&quot;);//这是WebView最简单的调用JS的方法</div></pre></td></tr></table></figure>
+<p>当activity执行生命周期的时候，这里需要注意的是在onDestroy的时候，需要销毁WebView，不然也会出现内存泄漏的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">@Overrideprotected void onPause() &#123;    </div><div class="line">    super.onPause();    </div><div class="line">    if (webView != null) &#123;        </div><div class="line">        webView.onPause();    </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onResume() &#123;    </div><div class="line">    super.onResume();    </div><div class="line">    if (webView != null) &#123;        </div><div class="line">        webView.onResume();    </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onDestroy() &#123;        </div><div class="line">    if (webView != null) &#123;        </div><div class="line">        webView.clearCache(true); //清空缓存   </div><div class="line">        if (android.os.Build.VERSION.SDK_INT &gt;= android.os.Build.VERSION_CODES.LOLLIPOP) &#123;            </div><div class="line">            if (webViewLayout != null) &#123;                </div><div class="line">                webViewLayout.removeView(webView);            </div><div class="line">            &#125;            </div><div class="line">        webView.removeAllViews();            </div><div class="line">        webView.destroy();        </div><div class="line">    &#125;else &#123;            </div><div class="line">        webView.removeAllViews();            </div><div class="line">        webView.destroy();            </div><div class="line">        if (webViewLayout != null) &#123;                </div><div class="line">            webViewLayout.removeView(webView);           </div><div class="line">        &#125;        </div><div class="line">     &#125;  </div><div class="line">     webView = null;    </div><div class="line">  &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5-0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。"><a href="#可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5-0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。" class="headerlink" title="可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5.0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。"></a>可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5.0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。</h3><p>现在还遇到的一个问题就是，当WebView嵌套在ScrollView中时，某些机型会出现闪屏的问题，单独WebView的时候是不会出现的，把硬件加速关闭了之后，对用户的体验又不好，所以暂时还未想到比较好的解决方案，所以还是建议不要在ScrollView中嵌套WebView这样的控件。<br>暂时就总结了这么多，相信以后在项目中还会遇到更多的问题的，遇到其他的问题再更新上来，以备忘吧。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/19/如何让你的app在后台被干掉后优雅的重新启动/" rel="next" title="如何让你的app在后台被干掉后优雅的重新启动">
+                <i class="fa fa-chevron-left"></i> 如何让你的app在后台被干掉后优雅的重新启动
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/19/我们一起来聊聊内存优化/" rel="prev" title="我们一起来聊聊内存优化">
+                我们一起来聊聊内存优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/19/WebView想说爱你不容易啊/"
+           data-title="WebView想说爱你不容易啊" data-url="http://yoursite.com/2017/02/19/WebView想说爱你不容易啊/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="mehao" />
+          <p class="site-author-name" itemprop="name">mehao</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用WebView"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用WebView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5-0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。"><span class="nav-number">3.</span> <span class="nav-text">可以看到上面的onDestroy方法中对系统的版本进行了判断，那是因为我在不同的版本中进行了测试，如果低于5.0版本的WebView中，如果先在parent中remove了WebView，那WebView将无法进行destroy了，这样就会造成内存的泄漏，下来你们可以自己去尝试一下这个说法是不是正确的。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mehao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mehao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
