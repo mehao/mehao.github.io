@@ -107,7 +107,7 @@
 有时候，你在打开一个app的时候会发现，你点击了这个app的图标">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1316299-1ab1fe56c0e698cb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1316299-4e98e3db89f91fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-19T13:03:54.000Z">
+<meta property="og:updated_time" content="2017-02-19T13:11:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="App冷启动，你还要我怎样？">
 <meta name="twitter:description" content="###什么叫冷启动
@@ -328,6 +328,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -370,8 +392,9 @@
 </blockquote>
 <p>###背景</p>
 <blockquote>
-<p>有时候，你在打开一个app的时候会发现，你点击了这个app的图标，打开了之后会出现一段时间的白屏或者图标卡顿了一会再进入app界面，这个时候你就会吐槽了，为什么会那么卡的？难道是我的手机永久了变卡的原因吗？并不是的，这是因为app的冷启动时间过长的原因造成app进入假死状态了。这也是我们本篇文章所要优化的。<br><a id="more"></a></p>
+<p>有时候，你在打开一个app的时候会发现，你点击了这个app的图标，打开了之后会出现一段时间的白屏或者图标卡顿了一会再进入app界面，这个时候你就会吐槽了，为什么会那么卡的？难道是我的手机永久了变卡的原因吗？并不是的，这是因为app的冷启动时间过长的原因造成app进入假死状态了。这也是我们本篇文章所要优化的。</p>
 </blockquote>
+<a id="more"></a>
 <p>###解决</p>
 <p>我们先来解决打开app的时候闪白屏的这个问题。</p>
 <p>首先我们得知道为什么会出现这个白屏的，在AndroidManifest.xml配置文件里面，你会看到你的LAUNCHER activity的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;activity    </div><div class="line">    android:name=&quot;.StartPageActivity&quot;    </div><div class="line">    android:screenOrientation=&quot;portrait&quot;&gt;    </div><div class="line">        &lt;intent-filter&gt;        </div><div class="line">            &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</div><div class="line">            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</div><div class="line">        &lt;/intent-filter&gt;</div><div class="line">&lt;/activity&gt;</div></pre></td></tr></table></figure></p>
@@ -428,22 +451,6 @@
         
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/02/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -505,12 +512,19 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
           
 
           
